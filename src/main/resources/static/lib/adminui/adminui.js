@@ -1,7 +1,7 @@
 layui.extend({
-    'adminui': '{/}static/lib/adminui/adminui',
-    'adminui-nav': '{/}static/lib/adminui/modules/nav',
-    'list': '{/}static/lib/admin-ui/modules/list',
+    'adminui': '{/}lib/adminui/adminui',
+    'adminui-nav': '{/}lib/adminui/modules/nav',
+    'list': '{/}lib/admin-ui/modules/list',
 });
 
 // 主入口方法

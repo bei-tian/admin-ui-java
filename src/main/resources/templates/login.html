@@ -33,7 +33,7 @@
         form.on('submit(*)', function(data){
             $.post('/login',data.field,function(data) {
                 if(data.code === 200) {
-                    //location.href = '/';
+                    location.href = '/';
                 }else {
                     layer.msg(data.msg);
                 }
@@ -41,5 +41,4 @@
             return false;
         });
     });
-</script>
 </script>

@@ -27,12 +27,12 @@ layui.define(['layer', 'element'], function (exports) {
                             view += '<a href="javascript:;"><i class="adminui-icon">' + v.icon + '</i>' + v.name + '</a><dl class="layui-nav-child">';
                             $(v.sub).each(function (ko, vo) {
                                 view += '<dd key="'+ index + '-' + k + '-'+ ko +'">';
-                                view += '<a href="javascript:;" data-href="' + vo.href + '">';
+                                view += '<a href="javascript:;" data-href="' + vo.url + '">';
                                 view += '<i class="adminui-icon">' + vo.icon + '</i>' + vo.name + '</a></dd>';
                             });
                             view += '<dl>';
                         } else {
-                            view += '<a href="javascript:;" data-href="' + v.href + '">';
+                            view += '<a href="javascript:;" data-href="' + v.url + '">';
                             view += '<i class="adminui-icon">' + v.icon + '</i>' + v.name + '</a>';
                         }
                         view += '</li>';

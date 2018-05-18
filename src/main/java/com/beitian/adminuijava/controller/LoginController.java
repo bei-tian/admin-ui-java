@@ -27,6 +27,9 @@ public class LoginController {
         return "login";
     }
 
+
+
+    //登陆操作
     @PostMapping(value = "/login")
     @ResponseBody
     public Result login(@Valid Admin admin, BindingResult bindingResult, HttpSession session) throws Exception {
