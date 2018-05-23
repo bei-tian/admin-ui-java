@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:include="/common::header">
-</head>
-<body>
-
+<#include "public/layout.ftl" />
+<@body>
 <!-- layout admin -->
 <div class="layui-layout layui-layout-admin">
     <!-- header -->
@@ -110,11 +106,10 @@
     </table>
 </div>
 
-</body>
-</html>
 <script type="text/javascript" src="/lib/adminui/adminui.js"></script>
 <script type="text/javascript">
     layui.use(['adminui-nav'], function () {
         layui['adminui-nav'].init('/home/nav');//导航数据api接口
     });
 </script>
+</@body>

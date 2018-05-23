@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:include="/common::header">
-</head>
-<body>
+<#include "../public/layout.ftl" />
+<@body>
 <form class="layui-form " method="post">
-    <input type="hidden" name="id" th:if="${item}" th:attr="value=${item.id}">
+    <#if item??><input type="hidden" name="id" value="${item.id}"></#if>
 
     <div class="layui-form-item  on-selected">
         <label class="layui-form-label layui-input-required">名称</label>
         <div class="layui-input-block" style="width:50%">
-            <input type="text" name="name"  th:attr="value=${item} ? ${item.name}:''" lay-verify="required" autocomplete="off" class="layui-input form-item">
+            <input type="text" name="name" value="${(item.name)!}" lay-verify="required" class="layui-input form-item">
         </div>
     </div>
-
 
     <div class="layui-form-item ">
         <div class="layui-input-block">
@@ -21,9 +17,8 @@
         </div>
     </div>
 </form>
-<div th:include="/common::footer"></div>
-<div th:include="/common::formJs"></div>
-</body>
-</html>
+</@body>
+
+<#include "../public/form.ftl" />
 
 

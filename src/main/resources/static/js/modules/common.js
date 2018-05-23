@@ -23,13 +23,19 @@ layui.define(['layer','form'], function (exports) {
     //删除
     $(".delete").click(function () {
         if(confirm('确定要删除该条记录吗？')) {
-            $.get($(this).data('url'),function (res) {
-                if(res == 'ok') {
-                    location.reload();
-                } else {
-                    parent.layer.msg(res);
+            $.ajax({
+                url: $(this).data('url'),
+                type: 'DELETE',
+                dataType:'json',
+                success: function(data) {
+                    if(data.code === 200) {
+                        layer.msg("删除成功！");
+                        location.reload();
+                    }else {
+                        layer.msg(data.msg, {icon: 5,shift: 6});
+                    }
                 }
-            })
+            });
         }
     });
 

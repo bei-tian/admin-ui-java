@@ -3,7 +3,7 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/admin-ui-java
+    url: jdbc:mysql://127.0.0.1:3306/admin-ui-java?characterEncoding=utf-8
     username: root
     password: ""
   jpa:
@@ -11,3 +11,6 @@ spring:
       ddl-auto: update
       use-new-id-generator-mappings: false
     show-sql: true
+
+  freemarker:
+    suffix: .ftl

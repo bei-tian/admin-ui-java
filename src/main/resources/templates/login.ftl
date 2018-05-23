@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head th:include="/common::header">
-    </head>
-    <body>
+<#include "public/layout.ftl" />
+<@body>
     <div class="login-main">
         <header class="layui-elip">后台登录</header>
         <form class="layui-form">
@@ -21,9 +18,6 @@
         </form>
     </div>
 
-    <div th:include="/common::footer"></div>
-    </body>
-    </html>
 
 <script>
     layui.use(['layer','form'], function(){
@@ -42,3 +36,4 @@
         });
     });
 </script>
+</@body>

@@ -13,6 +13,10 @@ public class ResultUtil {
         return result;
     }
 
+    public static Result success() {
+        return success(null);
+    }
+
     public static Result error(int code, String msg) {
         Result result = new Result();
         result.setCode(code);
