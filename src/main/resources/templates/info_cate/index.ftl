@@ -36,3 +36,7 @@
 <div class="adminui-page" id="page" count="${page.totalElements}"></div>
 
 </@body>
+
+<script type="text/javascript">
+    layui.use(['list']);
+</script>

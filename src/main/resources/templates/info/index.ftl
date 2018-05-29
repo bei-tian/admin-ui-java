@@ -3,7 +3,7 @@
 <blockquote class="layui-elem-quote quoteBox">
     <form class="layui-form">
         <div class="layui-inline">
-            <a class="layui-btn btn-add btn-default layer-open"  w="500px" h="400px"  title="添加" data-url="/info/0"><i class="layui-icon">&#xe654;</i>添加</a>
+            <a class="layui-btn btn-add btn-default layer-open" title="添加" data-url="/info/0"><i class="layui-icon">&#xe654;</i>添加</a>
             <a class="layui-btn btn-add btn-default " onclick="location.reload()"><i class="layui-icon">&#x1002;</i>刷新</a>
         </div>
     </form>
@@ -26,7 +26,7 @@
         <td>${item.title}</td>
         <td>${item.createTime}</td>
         <td>
-            <a class="layui-btn  layui-btn-sm layer-open" w="500px" h="400px"  data-url="/info/${item.id}">编辑</a>
+            <a class="layui-btn  layui-btn-sm layer-open" data-url="/info/${item.id}">编辑</a>
             <a class="layui-btn layui-btn-sm layui-btn-danger delete"  data-url="/info/${item.id}">删除</a>
         </td>
     </tr>
@@ -36,3 +36,7 @@
 <div class="adminui-page" id="page" count="${page.totalElements}"></div>
 
 </@body>
+
+<script type="text/javascript">
+    layui.use(['list']);
+</script>

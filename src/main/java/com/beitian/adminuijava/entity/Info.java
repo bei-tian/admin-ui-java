@@ -11,14 +11,16 @@ public class Info {
 
     private String title;
 
+    private String file;
+
     @Column(columnDefinition = "text")
     private String  content;
 
     @Column(columnDefinition = "timestamp default current_timestamp")
     private Timestamp createTime;
 
-    @ManyToOne
-    private InfoCate infoCate;
+    private int infoCateId;
+
 
     public Info() {
     }
@@ -53,5 +55,21 @@ public class Info {
 
     public void setCreateTime(Timestamp createTime) {
         this.createTime = createTime;
+    }
+
+    public int getInfoCateId() {
+        return infoCateId;
+    }
+
+    public void setInfoCateId(int infoCateId) {
+        this.infoCateId = infoCateId;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
     }
 }

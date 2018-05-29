@@ -1,7 +1,9 @@
 package com.beitian.adminuijava.controller;
 
 import com.beitian.adminuijava.entity.Info;
+import com.beitian.adminuijava.entity.InfoCate;
 import com.beitian.adminuijava.object.Result;
+import com.beitian.adminuijava.repository.InfoCateRepository;
 import com.beitian.adminuijava.repository.InfoRepository;
 import com.beitian.adminuijava.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @Controller
 @RequestMapping("/info")
@@ -19,6 +23,9 @@ public class InfoController {
 
     @Autowired
     InfoRepository infoRepository;
+
+    @Autowired
+    InfoCateRepository infoCateRepository;
 
     @GetMapping("")
     public String index(Model model, @PageableDefault(value = 15) Pageable pageable) {
@@ -30,6 +37,8 @@ public class InfoController {
 
     @GetMapping("/{id}")
     public String edit(@PathVariable Integer id, Model model) {
+        List<InfoCate> infoCates = infoCateRepository.findAll();
+        model.addAttribute("infoCates", infoCates);
         if (id > 0 ){
             Info item = infoRepository.findById(id).get();
             model.addAttribute("item", item);

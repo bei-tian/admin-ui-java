@@ -1,2 +1,4 @@
 server:
   port: 8080
+
+uploadPath: F:/java/admin-ui-java/upload/

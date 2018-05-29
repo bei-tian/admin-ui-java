@@ -19,6 +19,8 @@
 </form>
 </@body>
 
-<#include "../public/form.ftl" />
+<script type="text/javascript">
+    layui.use(['add']);
+</script>
 
 
